@@ -7,7 +7,7 @@ __author__ = 'peyton glover worked with corbin creech'
 
 
 
-def getAstro():
+def get_astro():
     result = []
     response = requests.get('http://api.open-notify.org/astros.json')
     response = response.json()
@@ -17,7 +17,7 @@ def getAstro():
     result.append('total astronauts in space: {}'.format(len(response["people"])))
     print(result)
 
-getAstro()
+
     
 def get_coord():
     result = []
@@ -28,7 +28,7 @@ def get_coord():
     return result
     print(result)
 
-get_coord()
+
 
 
 def get_indy_time():
@@ -38,7 +38,6 @@ def get_indy_time():
     print(response)
     return response
 
-get_indy_time()
 
 def do_turtle():
     indytime = get_indy_time()
@@ -72,11 +71,13 @@ def do_turtle():
     
     return screen
 
-test = do_turtle()
-test.exitonclick()
 
 def main():
-    pass
+    get_astro()
+    get_coord()
+    get_indy_time()
+    test = do_turtle()
+    test.exitonclick()
 
 
 if __name__ == '__main__':
